@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './HomePage.scss';
+import bearImage from '../../assets/images/Luma AI Generator bear icon.jpg';
 
 const client = {
   generations: {
@@ -96,18 +97,24 @@ function HomePage() {
 
   return (
     <div className="container">
-      <h1>Luma AI Video Generation</h1>
-      <div className="form-group">
-        <input
-          type="text"
-          value={prompt}
-          onChange={(e) => setPrompt(e.target.value)}
-          placeholder="Enter your video prompt"
-          className="prompt-input"
-        />
-        <button onClick={generateImage} disabled={loading} className="generate-button">
-          {loading ? 'Generating...' : 'Generate Video'}
-        </button>
+      <div className="header">
+        <img src={bearImage} alt="Bear" className="bear-image left-bear" />
+        <h1>Luma AI Video Generator</h1>
+        <img src={bearImage} alt="Bear" className="bear-image right-bear" />
+      </div>
+      <div className="content-wrapper">
+        <div className="form-group">
+          <input
+            type="text"
+            value={prompt}
+            onChange={(e) => setPrompt(e.target.value)}
+            placeholder="Enter your video prompt"
+            className="prompt-input"
+          />
+          <button onClick={generateImage} disabled={loading} className="generate-button">
+            {loading ? 'Generating...' : 'Generate Video'}
+          </button>
+        </div>
       </div>
       {loading && <div className="loader">Generating your video... This may take a few moments.</div>}
       {error && <p className="error">{error}</p>}

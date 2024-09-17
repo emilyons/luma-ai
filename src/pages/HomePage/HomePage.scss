@@ -13,7 +13,7 @@
 h1 {
   color: $secondary-color;
   text-align: center;
-  margin-bottom: 30px;
+  margin: 0 20px;
 }
 
 .form-group {
@@ -113,4 +113,55 @@ h1 {
   &:hover {
     background-color: darken($secondary-color, 10%);
   }
+}
+
+.bear-image {
+  max-width: 10rem;
+  height: auto;
+}
+
+.left-bear {
+  transform: scaleX(-1); // Flip the left bear horizontally
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+}
+
+.form-group {
+  flex: 1;
+  margin-right: 2rem;
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+
+  .form-group {
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .bear-image {
+    max-width: 4rem;
+  }
+
+  .left-bear {
+    order: 2; // Move the left bear below the title on mobile
+  }
+
+  .right-bear {
+    order: 1; // Move the right bear above the title on mobile
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
 }
