@@ -3,7 +3,7 @@
 .container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 2rem 1rem;
   font-family: Arial, sans-serif;
   background-color: $background-color;
   border-radius: 8px;
@@ -13,20 +13,23 @@
 h1 {
   color: $secondary-color;
   text-align: center;
-  margin: 0 20px;
+  margin: 0;
+  font-size: 2.5rem;
+  flex: 1;
 }
 
 .form-group {
   display: flex;
+  gap: 0.5rem;
   margin-bottom: 30px;
 }
 
 .prompt-input {
-  flex-grow: 1;
-  padding: 12px;
-  font-size: 16px;
-  border: 2px solid $border-color;
-  border-radius: 4px 0 0 4px;
+  flex: 1;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid $border-color;
+  border-radius: 4px;
   transition: border-color 0.3s;
 
   &:focus {
@@ -36,13 +39,12 @@ h1 {
 }
 
 .generate-button {
-  padding: 12px 24px;
-  font-size: 16px;
-  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
   background-color: $primary-color;
   color: white;
   border: none;
-  border-radius: 0 4px 4px 0;
+  border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
 
@@ -116,19 +118,24 @@ h1 {
 }
 
 .bear-image {
-  max-width: 10rem;
+  width: 4rem;
   height: auto;
 }
 
 .left-bear {
-  transform: scaleX(-1); // Flip the left bear horizontally
+  transform: scaleX(-1);
+  margin-right: 1rem;
+}
+
+.right-bear {
+  margin-left: 1rem;
 }
 
 .content-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .form-group {
@@ -136,26 +143,25 @@ h1 {
   margin-right: 2rem;
 }
 
-@media (max-width: 768px) {
-  .content-wrapper {
-    flex-direction: column;
+@media (max-width: 600px) {
+  .header {
+    flex-wrap: nowrap;
   }
 
-  .form-group {
-    margin-right: 0;
-    margin-bottom: 2rem;
+  h1 {
+    font-size: 1.5rem;
   }
 
   .bear-image {
-    max-width: 4rem;
+    width: 3rem;
   }
 
-  .left-bear {
-    order: 2; // Move the left bear below the title on mobile
+  .form-group {
+    flex-direction: column;
   }
 
-  .right-bear {
-    order: 1; // Move the right bear above the title on mobile
+  .generate-button {
+    width: 100%;
   }
 }
 
@@ -163,5 +169,5 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }

@@ -99,7 +99,7 @@ function HomePage() {
     <div className="container">
       <div className="header">
         <img src={bearImage} alt="Bear" className="bear-image left-bear" />
-        <h1>Luma AI Video Generator</h1>
+        <h1>LumaBear AI Video Forge</h1>
         <img src={bearImage} alt="Bear" className="bear-image right-bear" />
       </div>
       <div className="content-wrapper">
