@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-dom';
 import HomePage from './pages/HomePage/HomePage';
 import CompletedGenerationsPage from './pages/CompletedGenerationsPage/CompletedGenerationsPage';
 import './App.css';
@@ -8,10 +8,10 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <nav>
+        <nav className="main-nav">
           <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/completed">Completed Generations</Link></li>
+            <li><NavLink to="/" end>Home</NavLink></li>
+            <li><NavLink to="/completed">Completed Generations</NavLink></li>
           </ul>
         </nav>
         <Routes>

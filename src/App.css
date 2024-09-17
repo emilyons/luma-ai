@@ -5,6 +5,43 @@
   text-align: center;
 }
 
+.main-nav {
+  background-color: #f0f0f0;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+}
+
+.main-nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.main-nav li {
+  margin: 0 1rem;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.main-nav a:hover {
+  background-color: #e0e0e0;
+}
+
+.main-nav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
