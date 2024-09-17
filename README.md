@@ -5,7 +5,7 @@ This is a React-based web application that uses the Luma AI API to generate imag
 ## Features
 
 - Generate videos from text prompts
-- View and download completed generations
+- View and download 10 most recent completed generations
 - Responsive design for various screen sizes
 
 ## Prerequisites
