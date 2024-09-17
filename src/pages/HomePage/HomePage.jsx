@@ -40,6 +40,7 @@ function HomePage() {
     }
     setLoading(true);
     setError(null);
+    setGenerationDetails(null);
     try {
       const generation = await client.generations.create({
         aspect_ratio: '16:9',
@@ -48,7 +49,7 @@ function HomePage() {
       setGenerationId(generation.id);
     } catch (error) {
       console.error('Error generating image:', error);
-      setError('Failed to generate image');
+      setError('Failed to generate image. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -95,7 +96,7 @@ function HomePage() {
 
   return (
     <div className="container">
-      <h1>Luma AI Image Generation</h1>
+      <h1>Luma AI Video Generation</h1>
       <div className="form-group">
         <input
           type="text"
@@ -108,18 +109,23 @@ function HomePage() {
           {loading ? 'Generating...' : 'Generate Image'}
         </button>
       </div>
-      {loading && <div className="loader">Generating image...</div>}
-      {error && <p className="error">Error: {error}</p>}
-      {generationId && <p className="status">Generated Image ID: {generationId}</p>}
+      {loading && <div className="loader">Generating your video... This may take a few moments.</div>}
+      {error && <p className="error">{error}</p>}
+      {generationId && !loading && !error && (
+        <p className="status">Generation in progress. ID: {generationId}</p>
+      )}
       {generationDetails && (
         <div className="generation-details">
-          <h2>Generation Details:</h2>
+          <h2>Generation Details</h2>
           <p className="status">Status: {generationDetails.state}</p>
           {generationDetails.state === 'complete' && generationDetails.assets && generationDetails.assets.image && (
             <div className="image-container">
               <img src={generationDetails.assets.image} alt="Generated image" className="generated-image" />
-              <button onClick={handleDownload} className="download-button">Download Image</button>
+              <button onClick={handleDownload} className="download-button">Download Video</button>
             </div>
+          )}
+          {generationDetails.state !== 'complete' && (
+            <p>Your video is still being generated. Please wait...</p>
           )}
         </div>
       )}

@@ -3,31 +3,42 @@
 .container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 40px 20px;
   font-family: Arial, sans-serif;
+  background-color: $background-color;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
   color: $secondary-color;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 .form-group {
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .prompt-input {
   flex-grow: 1;
-  padding: 10px;
+  padding: 12px;
   font-size: 16px;
-  border: 1px solid $border-color;
+  border: 2px solid $border-color;
   border-radius: 4px 0 0 4px;
+  transition: border-color 0.3s;
+
+  &:focus {
+    outline: none;
+    border-color: $primary-color;
+  }
 }
 
 .generate-button {
-  padding: 10px 20px;
+  padding: 12px 24px;
   font-size: 16px;
+  font-weight: bold;
   background-color: $primary-color;
   color: white;
   border: none;
@@ -36,7 +47,7 @@ h1 {
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: darken($primary-color, 5%);
+    background-color: darken($primary-color, 10%);
   }
 
   &:disabled {
@@ -47,19 +58,22 @@ h1 {
 
 .status, .error {
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 4px;
 }
 
 .error {
-  color: $error-color;
+  color: white;
+  background-color: $error-color;
 }
 
 .generation-details {
-  background-color: $background-color;
+  background-color: white;
   border: 1px solid $border-color;
   border-radius: 4px;
   padding: 20px;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .generated-image {
@@ -75,6 +89,7 @@ h1 {
   text-align: center;
   margin: 20px 0;
   font-style: italic;
+  color: $secondary-color;
 }
 
 .image-container {
@@ -84,9 +99,10 @@ h1 {
 }
 
 .download-button {
-  margin-top: 10px;
-  padding: 10px 20px;
+  margin-top: 20px;
+  padding: 12px 24px;
   font-size: 16px;
+  font-weight: bold;
   background-color: $secondary-color;
   color: white;
   border: none;
