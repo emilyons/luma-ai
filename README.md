@@ -1,6 +1,6 @@
-# Luma AI Image Generation App
+# LumaBear AI Video Forge
 
-This is a React-based web application that uses the Luma AI API to generate images based on text prompts. The app allows users to input prompts, generate images, and view completed generations.
+LumaBear AI Video Forge is a lightweight React-based web app that makes it easy to generate AI-powered videos from text prompts using the Luma AI API. Whether you're exploring the capabilities of AI or just having some fun, this app provides a simple interface for experimenting with prompt-based video generation. It was designed as an afternoon project to dive deeper into AI integration, and it's perfect for anyone looking to tinker with AI video generation in a straightforward, accessible way.
 
 ## Features
 
