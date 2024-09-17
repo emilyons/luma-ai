@@ -102,11 +102,11 @@ function HomePage() {
           type="text"
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
-          placeholder="Enter your image prompt"
+          placeholder="Enter your video prompt"
           className="prompt-input"
         />
         <button onClick={generateImage} disabled={loading} className="generate-button">
-          {loading ? 'Generating...' : 'Generate Image'}
+          {loading ? 'Generating...' : 'Generate Video'}
         </button>
       </div>
       {loading && <div className="loader">Generating your video... This may take a few moments.</div>}
